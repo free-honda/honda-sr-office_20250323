@@ -6,18 +6,29 @@
   <title>ホンダ社労士事務所</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/contact.css"> <!-- ページ専用CSSがあれば -->
+  <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
 
   <header>
-    <h1><a href="index.html">ホンダ社労士事務所</a></h1>
-    <nav>
+    <div class="header-title">
+      <a href="index.html">
+        <img src="images/logo.png" alt="ロゴ" style="height: 50px; margin-right: 1000px;">
+      </a>
+    </div>
+
+    <!-- ハンバーガーメニューアイコン -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- ナビゲーション -->
+    <nav class="nav-menu" id="nav-menu">
       <a href="index.html">HOME</a>
-      <a href="greeting.html">代表挨拶</a>
       <a href="office.html">事務所案内</a>
       <a href="services.html">サービス案内</a>
-      <a href="pricing.html">料金案内</a>
       <a href="contact.html">お問い合わせ</a>
       <a href="support-a.html">就労支援A型</a>
     </nav>
@@ -26,7 +37,14 @@
   <main class="container">
     <section>
       <h2>お問い合わせフォーム</h2>
-      <form action="#" method="post">
+      <form action="https://formsubmit.co/tbentian37@gmail.com" method="POST">
+        <!-- thanks.html がS3に存在する場合はOK。なければ index.html などに変えても可 -->
+        <input type="hidden" name="_next" value="thanks.html">
+
+        <!-- スパム対策 -->
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_captcha" value="false">
+
         <label for="name">お名前：</label><br>
         <input type="text" id="name" name="name" required><br><br>
 
@@ -45,5 +63,15 @@
     <p>&copy; ホンダ社労士事務所</p>
   </footer>
 
+  <!-- メニュー開閉スクリプト -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navMenu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

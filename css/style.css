@@ -3,17 +3,47 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  background-color: #ffffff;
+  background-color: #3d843d;
   color: #333;
   line-height: 1.8;
 }
 
-/* ヘッダー・フッター */
+/* ヘッダー・フッター共通 */
 header, footer {
-  background-color: #ffcc80;
-  color: #fff;
+  background-color: #ffffff;
+  color: #333;
   text-align: center;
   padding: 20px;
+}
+
+/* ヘッダーのレイアウト */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ロゴ */
+.logo img {
+  height: 50px;
+}
+
+/* ナビゲーション */
+.nav-menu {
+  display: flex;
+  gap: 15px;
+}
+
+/* ハンバーガーメニュー */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
 }
 
 /* コンテンツエリア */
@@ -81,6 +111,7 @@ a.button:hover {
 /* フッター文字サイズ */
 footer {
   font-size: 14px;
+  color: #333;
 }
 
 /* h1内リンクを自然に見せる */
@@ -88,9 +119,71 @@ h1 a {
   color: inherit;
   text-decoration: none;
   pointer-events: auto;
-  cursor: pointer; /* ← マウスを乗せると「手のアイコン」に */
+  cursor: pointer;
 }
-
 h1 a:hover {
   text-decoration: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* ハンバーガーメニューアイコン */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* メニューが開いてるときのアニメーション（オプション） */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
 }

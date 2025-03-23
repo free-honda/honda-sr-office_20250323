@@ -11,13 +11,24 @@
 <body>
 
   <header>
-    <h1><a href="index.html">ホンダ社労士事務所</a></h1>
-    <nav>
+    <div class="header-title">
+      <a href="index.html">
+        <img src="images/logo.png" alt="ロゴ" style="height: 50px; margin-right: 1000px;">
+      </a>
+    </div>
+
+    <!-- ハンバーガーメニューアイコン -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- ナビゲーション -->
+    <nav class="nav-menu" id="nav-menu">
       <a href="index.html">HOME</a>
-      <a href="greeting.html">代表挨拶</a>
       <a href="office.html">事務所案内</a>
       <a href="services.html">サービス案内</a>
-      <a href="pricing.html">料金案内</a>
       <a href="contact.html">お問い合わせ</a>
       <a href="support-a.html">就労支援A型</a>
     </nav>
@@ -26,11 +37,15 @@
   <main class="container">
 
     <section id="greeting">
-      <h2>ご挨拶</h2>
+      <h2>代表挨拶</h2>
       <p>
-        私たちホンダ社労士事務所は、「人を大切にする企業づくり」の伴走者として、企業の成長と職場の健全な運営を支援しております。
-        法改正や多様な働き方が進む中、企業経営において労務管理の重要性はますます高まっています。制度の整備から日々の実務対応まで、
-        丁寧かつ的確にサポートさせていただきます。地域の皆さまに信頼される身近な社労士事務所を目指し、誠実に取り組んでまいります。
+        このたびは当事務所ホームページをご訪問いただきありがとうございます。当事務所は労働保険、社会保険の手続き、就業規則の作成、給与計算など、従業員の採用から退職までのご相談を承っております。企業様のご発展に欠かすことが出来ない「人を大切にする企業の実現」に向けて、誠実に向き合って参りたいと思っております。
+      </p>
+      <p>
+        近年、人手不足の深刻化や働き方改革等の法改正に伴い、職場環境や労務管理の過渡期を迎えております。その中で、多様な働き方の労務管理を行うこと、労使トラブルを未然に防ぐための就業規則や社内規定の整備をすることは重要な課題となっております。経営者の皆様が安心して本業に専念出来ますよう、労務管理のパートナーとしてサポートさせて頂きます。
+      </p>
+      <p>
+        また、IT企業での勤務経験を活かし、労務管理関係の各種システム導入などの支援等も行っております。どうぞお気軽にお問い合わせください。
       </p>
     </section>
 
@@ -92,5 +107,15 @@
     <p>&copy; ホンダ社労士事務所</p>
   </footer>
 
+  <!-- メニュー開閉スクリプト -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navMenu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

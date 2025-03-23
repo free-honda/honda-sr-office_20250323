@@ -8,8 +8,8 @@ section {
 }
 
 h2 {
-  color: #ff8f00;
-  border-left: 6px solid #ffb74d;
+  color: #000000;
+  border-left: 6px solid #3d843d;
   padding-left: 12px;
   margin-top: 0;
   font-size: 20px;
@@ -23,7 +23,7 @@ nav a {
   margin: 0 10px;
   text-decoration: none;
   color: #ffffff;
-  background-color: #ffa726;
+  background-color: #3d843d;
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 14px;
