@@ -12,7 +12,7 @@ body {
 header, footer {
   background-color: #ffffff;
   color: #333;
-  text-align: center;
+  /* text-align: center; */
   padding: 20px;
 }
 
@@ -112,6 +112,7 @@ a.button:hover {
 footer {
   font-size: 14px;
   color: #333;
+  text-align: center;
 }
 
 /* h1内リンクを自然に見せる */
