@@ -32,6 +32,10 @@ honda-sr-office_20250323
 - **就労支援A型**：`support-a.html`
 - **お知らせ一覧**：`info/` 内に格納
 
+### テスト公開中
+
+https://honda-ehime-dev-20250323.s3.ap-northeast-1.amazonaws.com/honda-sr-office_20250323/index.html
+
 ### 備考
 
 - HTMLとCSSのみで構成された静的Webサイトです。
